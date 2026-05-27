@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos — Derecho Audiovisual | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { musgo:'#2E4036', arcilla:'#CC5833', crema:'#F2F0E9', carbon:'#1A1A1A' },
+        fontFamily: { sans:['"Plus Jakarta Sans"','sans-serif'], serif:['"Cormorant Garamond"','serif'], mono:['"IBM Plex Mono"','monospace'] }
+      }}
+    }
+  </script>
+
+  <style>
+    #site-header.scrolled { background:rgba(242,240,233,0.9)!important; backdrop-filter:blur(24px); box-shadow:0 1px 0 rgba(46,64,54,0.12); }
+
+    /* ── Resource card base ── */
+    .rc {
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.75rem;
+      overflow: hidden;
+      background: #fff;
+      text-decoration: none;
+      box-shadow: 0 2px 20px rgba(26,26,26,0.06);
+      transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+      position: relative;
+    }
+    .rc:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(26,26,26,0.13);
+    }
+
+    /* ── Card image ── */
+    .rc-img {
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .rc-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
+    }
+    .rc:hover .rc-img img { transform: scale(1.06); }
+    .rc-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(26,26,26,0.18) 100%);
+    }
+    .rc-num-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(242,240,233,0.9);
+      background: rgba(26,26,26,0.4);
+      backdrop-filter: blur(12px);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(242,240,233,0.15);
+    }
+
+    /* ── Card body ── */
+    .rc-body {
+      padding: 1.5rem 1.75rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1rem;
+    }
+    .rc-category {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #CC5833;
+    }
+    .rc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      color: #1A1A1A;
+      margin: 0;
+    }
+    .rc-desc {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: rgba(26,26,26,0.48);
+      margin: 0;
+    }
+    .rc-footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: auto;
+    }
+    .rc-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .rc-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(46,64,54,0.13);
+      color: rgba(46,64,54,0.6);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .rc-arrow {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      border: 1.5px solid rgba(46,64,54,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+    .rc:hover .rc-arrow {
+      background: #CC5833;
+      border-color: #CC5833;
+      transform: translate(2px, -2px);
+    }
+    .rc:hover .rc-arrow svg { stroke: #fff; }
+
+    /* ── LAYOUT SIZES ── */
+
+    /* Tall portrait card */
+    .rc-tall .rc-img { height: 320px; }
+
+    /* Wide landscape card */
+    .rc-wide .rc-img { height: 380px; }
+
+    /* Featured extra-tall */
+    .rc-hero .rc-img { height: 480px; }
+
+    /* Equal medium */
+    .rc-med .rc-img { height: 240px; }
+    .rc-med .rc-title { font-size: 1.25rem; }
+
+    /* ── GRID LAYOUTS ── */
+    .rc-row {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .rc-row-featured {
+      grid-template-columns: 1fr;
+    }
+    @media(min-width: 768px) {
+      .rc-row-featured { grid-template-columns: 58% 1fr; }
+    }
+    .rc-row-three {
+      grid-template-columns: 1fr;
+    }
+    @media(min-width: 640px) {
+      .rc-row-three { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width: 900px) {
+      .rc-row-three { grid-template-columns: repeat(3, 1fr); }
+    }
+    .rc-row-featured-rev {
+      grid-template-columns: 1fr;
+    }
+    @media(min-width: 768px) {
+      .rc-row-featured-rev { grid-template-columns: 1fr 58%; }
+    }
+
+    /* ── Hero ghost ── */
+    .hero-ghost-07 {
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-45%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(16rem, 28vw, 28rem);
+      color: rgba(242,240,233,0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Stats strip ── */
+    .stats-strip {
+      background: #fff;
+      border-bottom: 1px solid rgba(46,64,54,0.07);
+    }
+    .stats-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    @media(min-width: 768px) {
+      .stats-strip-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .stat-item {
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(46,64,54,0.07);
+      border-bottom: 1px solid rgba(46,64,54,0.07);
+    }
+    .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none; }
+    @media(min-width:768px) {
+      .stat-item:nth-child(2) { border-right: 1px solid rgba(46,64,54,0.07); }
+      .stat-item:last-child { border-right: none; }
+      .stat-item { border-bottom: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <!-- ── Header ── -->
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center">
+          <span class="font-serif text-crema text-sm italic font-semibold">CJ</span>
+        </div>
+        <span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span>
+      </a>
+      <div class="flex items-center gap-7">
+        <a href="index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a>
+        <a href="index.html#proceso"   class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Proceso</a>
+        <a href="conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a>
+        <a href="recursos.html" class="font-sans text-[13px] font-semibold text-arcilla">Recursos</a>
+      </div>
+      <a href="index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0">
+        <span>Consultar</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="bg-musgo pt-40 pb-24 px-6 md:px-16 relative overflow-hidden">
+    <div class="hero-ghost-07">08</div>
+    <div class="absolute top-0 left-0 w-[700px] h-[700px] rounded-full bg-arcilla/4 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="flex items-center gap-2 mb-10 opacity-0" id="bread">
+        <a href="index.html" class="font-mono text-[11px] text-crema/30 tracking-widest uppercase hover:text-crema/60 transition-colors">Inicio</a>
+        <span class="font-mono text-[11px] text-crema/15">·</span>
+        <span class="font-mono text-[11px] text-arcilla tracking-widest uppercase">Recursos</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-5 opacity-0" id="p-eye">Base de Conocimiento</p>
+          <h1 class="font-serif text-crema italic leading-[0.88] opacity-0" id="p-title" style="font-size:clamp(3rem,7.5vw,6.5rem);">
+            Derecho Audiovisual:<br/>
+            <span class="font-sans not-italic font-extralight text-crema/25" style="font-size:0.52em; letter-spacing:0.03em;">conceptos básicos</span>
+          </h1>
+        </div>
+        <div class="max-w-xs opacity-0" id="p-sub">
+          <p class="font-sans text-crema/35 text-sm leading-relaxed mb-6">
+            8 bloques temáticos con referencias normativas. Selecciona uno para acceder al contenido completo.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="flex gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+              <span class="w-2 h-2 rounded-full bg-arcilla/40"></span>
+            </div>
+            <span class="font-mono text-[11px] text-crema/25 tracking-widest">08 bloques</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats strip ── -->
+  <div class="stats-strip">
+    <div class="stats-strip-grid">
+      <div class="stat-item">
+        <p class="font-serif text-carbon italic text-2xl">08</p>
+        <p class="font-mono text-[10px] tracking-widest uppercase text-carbon/30 mt-0.5">Bloques temáticos</p>
+      </div>
+      <div class="stat-item">
+        <p class="font-serif text-carbon italic text-2xl">+40</p>
+        <p class="font-mono text-[10px] tracking-widest uppercase text-carbon/30 mt-0.5">Refs. normativas</p>
+      </div>
+      <div class="stat-item">
+        <p class="font-serif text-carbon italic text-2xl">3</p>
+        <p class="font-mono text-[10px] tracking-widest uppercase text-carbon/30 mt-0.5">Temas por bloque</p>
+      </div>
+      <div class="stat-item">
+        <p class="font-serif text-carbon italic text-2xl">UE</p>
+        <p class="font-mono text-[10px] tracking-widest uppercase text-carbon/30 mt-0.5">Marco europeo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Marquee ── -->
+  <div class="bg-arcilla py-3 px-6 overflow-hidden">
+    <div class="flex gap-8 whitespace-nowrap marquee-track font-mono text-[11px] tracking-[0.25em] uppercase text-crema/60">
+      <span>Fuentes del Derecho</span><span class="text-crema/25">·</span>
+      <span>Derechos Fundamentales</span><span class="text-crema/25">·</span>
+      <span>Protección de Datos</span><span class="text-crema/25">·</span>
+      <span>Propiedad Intelectual</span><span class="text-crema/25">·</span>
+      <span>Ciberseguridad</span><span class="text-crema/25">·</span>
+      <span>Publicidad Comercial</span><span class="text-crema/25">·</span>
+      <span>Contratos Digitales</span><span class="text-crema/25">·</span>
+      <span>Fuentes del Derecho</span><span class="text-crema/25">·</span>
+      <span>Derechos Fundamentales</span><span class="text-crema/25">·</span>
+      <span>Protección de Datos</span><span class="text-crema/25">·</span>
+      <span>Propiedad Intelectual</span><span class="text-crema/25">·</span>
+      <span>Ciberseguridad</span><span class="text-crema/25">·</span>
+      <span>Publicidad Comercial</span><span class="text-crema/25">·</span>
+      <span>Contratos Digitales</span><span class="text-crema/25">·</span>
+    </div>
+  </div>
+
+  <!-- ── Cards grid ── -->
+  <section class="bg-crema py-20 px-6 md:px-16">
+    <div class="max-w-6xl mx-auto flex flex-col gap-5">
+
+      <!-- Row 1: Bloque 1 (featured) + Bloque 2 -->
+      <div class="rc-row rc-row-featured">
+
+        <a href="bloques/bloque-1.html" class="rc rc-hero reveal">
+          <div class="rc-img">
+            <img src="imagenes/1.jpg" alt="El Ordenamiento Jurídico Español" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 01</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Fundamentos</p>
+              <h2 class="rc-title">El Ordenamiento Jurídico Español</h2>
+              <p class="rc-desc">Fuentes del Derecho, jerarquía normativa, poderes del Estado y el marco del Derecho Digital en la UE.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Fuentes del Derecho</span>
+                <span class="rc-tag">Derecho Digital</span>
+                <span class="rc-tag">UE</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="bloques/bloque-2.html" class="rc rc-tall reveal">
+          <div class="rc-img">
+            <img src="imagenes/2.jpg" alt="Marco Constitucional y Libertades" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 02</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Derechos Fundamentales</p>
+              <h2 class="rc-title">Marco Constitucional y Libertades</h2>
+              <p class="rc-desc">Artículo 20 CE, libertad de expresión e información, requisito de veracidad y límites constitucionales.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Art. 20 CE</span>
+                <span class="rc-tag">Libertad de expresión</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Row 2: Bloques 3, 4, 5 -->
+      <div class="rc-row rc-row-three">
+
+        <a href="bloques/bloque-3.html" class="rc rc-med reveal">
+          <div class="rc-img">
+            <img src="imagenes/3.jpg" alt="Honor, Intimidad y Propia Imagen" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 03</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Derechos Personalísimos</p>
+              <h2 class="rc-title">Honor, Intimidad y Propia Imagen</h2>
+              <p class="rc-desc">Protección constitucional del Art. 18, vías de reclamación y derecho de rectificación.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Art. 18 CE</span>
+                <span class="rc-tag">LO 1/1982</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="bloques/bloque-4.html" class="rc rc-med reveal">
+          <div class="rc-img">
+            <img src="imagenes/4.jpg" alt="Protección de Datos Personales" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 04</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Privacidad Digital</p>
+              <h2 class="rc-title">Protección de Datos Personales</h2>
+              <p class="rc-desc">RGPD, derechos ARCO, actores del tratamiento y el derecho al olvido en el entorno digital.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">RGPD</span>
+                <span class="rc-tag">LOPDPGDD</span>
+                <span class="rc-tag">AEPD</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="bloques/bloque-5.html" class="rc rc-med reveal">
+          <div class="rc-img">
+            <img src="imagenes/5.jpg" alt="Propiedad Intelectual" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 05</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Creación e Innovación</p>
+              <h2 class="rc-title">Propiedad Intelectual</h2>
+              <p class="rc-desc">El autor, tipos de autoría colectiva, derechos morales y patrimoniales sobre la obra.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Autoría</span>
+                <span class="rc-tag">Derechos morales</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Row 3: Bloque 6 + Bloque 7 (featured) -->
+      <div class="rc-row rc-row-featured-rev">
+
+        <a href="bloques/bloque-6.html" class="rc rc-tall reveal">
+          <div class="rc-img">
+            <img src="imagenes/6.jpg" alt="Ciberseguridad y Redes Sociales" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 06</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Seguridad Digital</p>
+              <h2 class="rc-title">Ciberseguridad y Redes Sociales</h2>
+              <p class="rc-desc">Pilares CIA, riesgos del ciberespacio, NIS2, DSA y DMA — el marco normativo europeo de ciberseguridad.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">NIS2</span>
+                <span class="rc-tag">DSA</span>
+                <span class="rc-tag">DMA</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="bloques/bloque-7.html" class="rc rc-hero reveal">
+          <div class="rc-img">
+            <img src="imagenes/7.jpg" alt="Publicidad y Comunicación Comercial" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 07</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Comunicación Comercial</p>
+              <h2 class="rc-title">Publicidad y Comunicación Comercial</h2>
+              <p class="rc-desc">Tipos de comunicación audiovisual, publicidad ilícita, autorregulación publicitaria y los contratos de la LGP.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Product Placement</span>
+                <span class="rc-tag">Contratos publicitarios</span>
+                <span class="rc-tag">Autocontrol</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Row 4: Bloque 8 (featured full-width) -->
+      <div class="rc-row rc-row-featured">
+
+        <a href="bloques/bloque-8.html" class="rc rc-wide reveal" style="grid-column: 1 / -1;">
+          <div class="rc-img">
+            <img src="imagenes/8.jpg" alt="Contratos Digitales y DMA" loading="lazy">
+            <div class="rc-img-overlay"></div>
+            <span class="rc-num-badge">Bloque 08</span>
+          </div>
+          <div class="rc-body">
+            <div>
+              <p class="rc-category">Contratos Digitales</p>
+              <h2 class="rc-title">Contratos y DMA — Guardianes de Acceso</h2>
+              <p class="rc-desc">Contrato electrónico, elementos esenciales y obligaciones LSSI. Reglamento de Mercados Digitales (UE) 2022/1925 y régimen de los guardianes de acceso.</p>
+            </div>
+            <div class="rc-footer">
+              <div class="rc-tags">
+                <span class="rc-tag">Contrato electrónico</span>
+                <span class="rc-tag">LSSI</span>
+                <span class="rc-tag">DMA</span>
+                <span class="rc-tag">Guardianes de acceso</span>
+              </div>
+              <div class="rc-arrow">
+                <svg width="13" height="13" fill="none" stroke="#2E4036" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="bg-musgo py-20 px-6 md:px-16">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal">
+      <div>
+        <p class="font-mono text-[11px] tracking-[0.35em] uppercase text-arcilla mb-3">¿Tienes dudas jurídicas?</p>
+        <h2 class="font-serif text-crema italic leading-[0.92]" style="font-size:clamp(1.8rem,4vw,3rem);">El conocimiento es el primer paso.<br/>La acción, el segundo.</h2>
+      </div>
+      <a href="index.html#contacto" class="btn-mag shrink-0 inline-flex items-center gap-3 bg-crema text-musgo text-[13px] font-semibold px-8 py-4 rounded-full border border-crema">
+        <span>Consultar ahora</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-carbon text-crema pt-16 pb-10 px-6 md:px-16 rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-musgo flex items-center justify-center">
+            <span class="font-serif text-crema text-sm italic font-semibold">CJ</span>
+          </div>
+          <div>
+            <p class="font-sans text-crema font-semibold text-sm">Conceptos Jurídicos</p>
+            <p class="font-mono text-crema/25 text-[11px] tracking-widest uppercase">Despacho de Abogados</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 font-sans text-sm text-crema/35">
+          <a href="index.html" class="hover:text-crema transition-colors">Inicio</a>
+          <a href="index.html#servicios" class="hover:text-crema transition-colors">Servicios</a>
+          <a href="conocenos.html" class="hover:text-crema transition-colors">Conócenos</a>
+          <a href="recursos.html" class="text-arcilla/70 hover:text-arcilla transition-colors">Recursos</a>
+        </div>
+      </div>
+      <div class="hr-fade text-crema/8 mb-8"></div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-mono text-crema/15 text-[11px]">© 2026 Conceptos Jurídicos · Todos los derechos reservados</p>
+        <div class="flex items-center gap-5 flex-wrap justify-center">
+          <a href="404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+          <span class="text-crema/10 text-[11px]">·</span>
+          <a href="proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+          <span class="text-crema/10 text-[11px]">·</span>
+          <a href="404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+          <div class="flex items-center gap-2 ml-1">
+            <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+            <span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll', () =>
+      document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60), { passive:true });
+
+    gsap.timeline({ delay:0.15 })
+      .fromTo('#bread',   { opacity:0, y:14 }, { opacity:1, y:0, duration:0.6, ease:'power3.out' })
+      .fromTo('#p-eye',   { opacity:0, y:14 }, { opacity:1, y:0, duration:0.6, ease:'power3.out' }, '-=0.3')
+      .fromTo('#p-title', { opacity:0, y:55 }, { opacity:1, y:0, duration:1.1, ease:'power3.out' }, '-=0.35')
+      .fromTo('#p-sub',   { opacity:0, y:20 }, { opacity:1, y:0, duration:0.75, ease:'power3.out' }, '-=0.6');
+
+    gsap.utils.toArray('.reveal').forEach((el, i) => {
+      gsap.fromTo(el, { opacity:0, y:45 },
+        { opacity:1, y:0, duration:0.9, ease:'power3.out',
+          scrollTrigger: { trigger:el, start:'top 88%', toggleActions:'play none none none' }
+        }
+      );
+    });
+  </script>
+</body>
+</html>

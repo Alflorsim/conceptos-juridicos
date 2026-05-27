@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 08 — Contratos y DMA | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.35) 0%,rgba(26,26,26,0.15) 35%,rgba(26,26,26,0.9) 100%),url('../imagenes/8.jpg');background-size:cover;background-position:center;background-color:#2E4036;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">08 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 08 · Contratos y Mercados Digitales</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Contratos y<br/>Guardianes de Acceso</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Contrato electrónico</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">LSSI</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">DMA</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Guardianes de acceso</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Contrato: Concepto y Elementos Esenciales</h3>
+        <p>Un contrato es un <strong>acuerdo de voluntades entre dos o más personas</strong> cuyo objetivo es <strong>crear obligaciones</strong> entre ellas, las cuales nacen efectivamente a raíz de dicho acuerdo.</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Consentimiento</strong><p>Manifestación de la voluntad de los contratantes. Para ser válido, no debe haber sido prestado por error, violencia, intimidación o dolo. En el ámbito digital, el consentimiento prestado por vía electrónica es plenamente válido.</p></div>
+          <div class="mini-card"><strong>Objeto</strong><p>Materia cierta del contrato o el contenido de la obligación. Debe ser: <em>posible</em> (existir al momento o en el futuro), <em>lícito</em> (dentro del comercio de los hombres) y <em>determinado</em> (al menos en cuanto a su especie).</p></div>
+          <div class="mini-card"><strong>Causa</strong><p>El fin que se persigue con la obligación que se establece. La causa debe ser verdadera y lícita (no contraria a las leyes o la moral).</p></div>
+          <div class="mini-card"><strong>Forma</strong><p>Aunque rige el principio de libertad de forma (los contratos pueden ser verbales), en ciertos casos la ley exige una específica —como la escritura pública— para que las obligaciones sean efectivas.</p></div>
+        </div>
+
+        <h3>Contrato Electrónico: Concepto y Perfección</h3>
+        <p>Todo contrato en el que la oferta y la aceptación se transmiten mediante <strong>equipos electrónicos</strong> de tratamiento y almacenamiento de datos conectados a una red de telecomunicaciones. Requiere los mismos elementos que un contrato tradicional: consentimiento, objeto y causa.</p>
+        <p>La perfección contractual se rige por el <strong>principio espiritualista</strong>: el consentimiento determina su validez y la forma no es requisito esencial para que el contrato exista. Los contratos consensuales se perfeccionan cuando concurren la oferta y la aceptación sobre el objeto y la causa. No es necesario un acuerdo previo para utilizar medios electrónicos, y la exigencia legal de «forma escrita» se considera satisfecha con el uso de estos medios.</p>
+
+        <h3>Obligaciones Previas y Posteriores (art. 27 LSSI)</h3>
+        <p><strong>Obligaciones previas</strong> — Antes de iniciar el procedimiento de contratación, el prestador debe ofrecer información clara, comprensible e inequívoca de forma permanente y gratuita sobre:</p>
+        <ul>
+          <li>Los trámites necesarios para celebrar el contrato.</li>
+          <li>Si el documento electrónico será archivado y si será accesible.</li>
+          <li>Los medios técnicos para identificar y corregir errores en la introducción de datos.</li>
+          <li>La lengua o lenguas en las que podrá formalizarse.</li>
+          <li>Las condiciones generales a las que se sujeta el contrato, de modo que el destinatario pueda almacenarlas y reproducirlas.</li>
+        </ul>
+        <p><strong>Obligaciones posteriores</strong> — Una vez celebrado el contrato, el oferente está obligado a confirmar la recepción de la aceptación mediante acuse de recibo por correo electrónico en un plazo de <span class="law-ref">24 horas</span>. Se presume que el destinatario tiene constancia de la recepción desde que el acuse se almacena en el servidor de su cuenta de correo.</p>
+
+        <h3>Prueba y Lugar de Celebración</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Prueba del contrato</strong><p>El soporte electrónico es admisible en juicio como prueba documental. Se recomienda el uso de la firma electrónica, el sellado de tiempo y las garantías propias del documento electrónico.</p></div>
+          <div class="mini-card"><strong>Lugar de celebración</strong><p>Con <em>consumidores</em>: se presume en el lugar de residencia habitual del consumidor. Entre <em>empresarios o profesionales</em>: en el lugar donde esté establecido el prestador de servicios.</p></div>
+        </div>
+
+        <h3>DMA — Reglamento de Mercados Digitales</h3>
+        <p>El <span class="law-ref">Reglamento (UE) 2022/1925</span> está diseñado para garantizar un sector digital <strong>competitivo, equitativo y justo</strong>. Sus tres objetivos principales:</p>
+        <ul>
+          <li><strong>Garantizar la disputabilidad:</strong> Permitir que otras empresas compitan con las grandes plataformas superando las barreras de entrada.</li>
+          <li><strong>Asegurar la equidad:</strong> Evitar desequilibrios entre los derechos y obligaciones de usuarios profesionales y plataformas.</li>
+          <li><strong>Fomentar la innovación:</strong> Proteger el crecimiento de empresas digitales emergentes y asegurar más opciones para los consumidores.</li>
+        </ul>
+
+        <h3>Guardianes de Acceso</h3>
+        <p>Un <strong>guardián de acceso</strong> es una empresa prestadora de servicios básicos de plataforma (motores de búsqueda, redes sociales, sistemas operativos, tiendas de aplicaciones) designada formalmente por la Comisión Europea por su gran poder económico y su papel como «puerta de acceso» entre usuarios profesionales y finales.</p>
+        <p><strong>Requisitos para la designación</strong> (art. 3 DMA):</p>
+        <ul>
+          <li><strong>Gran influencia en el mercado interior:</strong> Volumen de negocios anual en la UE ≥ 7.500 M€ en los últimos 3 años, o capitalización bursátil ≥ 75.000 M€. Debe prestar servicio en al menos 3 Estados miembros.</li>
+          <li><strong>Puerta de acceso importante:</strong> Más de 45 millones de usuarios finales activos mensuales en la UE y más de 10.000 usuarios profesionales activos anuales.</li>
+          <li><strong>Posición afianzada y duradera:</strong> Ha alcanzado los umbrales anteriores en cada uno de los últimos tres ejercicios.</li>
+        </ul>
+
+        <h3>Obligaciones de los Guardianes de Acceso</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Interoperabilidad</strong><p>Permitir que terceros interactúen con sus servicios en situaciones específicas, como en servicios de mensajería.</p></div>
+          <div class="mini-card"><strong>Acceso a datos</strong><p>Facilitar a las empresas usuarias el acceso a los datos que generen al utilizar la plataforma del guardián.</p></div>
+          <div class="mini-card"><strong>Transparencia publicitaria</strong><p>Proporcionar a anunciantes y editores las herramientas e información necesarias para verificar de forma independiente sus anuncios.</p></div>
+          <div class="mini-card"><strong>Promoción externa</strong><p>Permitir que los usuarios profesionales promocionen sus ofertas y celebren contratos fuera de la plataforma del guardián.</p></div>
+        </div>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Contrato — Elementos</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Contrato Electrónico</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Obligaciones LSSI</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Prueba y Lugar</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>DMA — Objetivos</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Guardianes de Acceso</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Obligaciones Guardianes</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">DMA — Reglamento (UE) 2022/1925</p>
+            <p class="sidebar-law-item">LSSI — art. 27 Obligaciones previas</p>
+            <p class="sidebar-law-item">Art. 3 DMA — Designación guardianes</p>
+            <p class="sidebar-law-item">CC arts. 1254–1262 — Contrato</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 08 de 08 — Último</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-arcilla px-4 py-3 rounded-xl hover:bg-musgo transition-colors">¡Has completado los 8 bloques!</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-7.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Publicidad</p></a>
+      <a href="../recursos.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Ver todos</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Volver a Recursos</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

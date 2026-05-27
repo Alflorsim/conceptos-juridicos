@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conócenos — Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { musgo:'#2E4036', arcilla:'#CC5833', crema:'#F2F0E9', carbon:'#1A1A1A' },
+        fontFamily: { sans:['"Plus Jakarta Sans"','sans-serif'], serif:['"Cormorant Garamond"','serif'], mono:['"IBM Plex Mono"','monospace'] }
+      }}
+    }
+  </script>
+
+  <style>
+    #site-header.scrolled { background:rgba(242,240,233,0.9)!important; backdrop-filter:blur(24px); box-shadow:0 1px 0 rgba(46,64,54,0.12); }
+
+    /* ── Featured card (Alfonso) ── */
+    .profile-featured {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-radius: 2.5rem;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 80px rgba(26,26,26,0.1);
+      transition: box-shadow 0.6s ease;
+    }
+    @media (min-width: 900px) {
+      .profile-featured { grid-template-columns: 42% 1fr; min-height: 560px; }
+    }
+    .profile-featured:hover { box-shadow: 0 24px 110px rgba(26,26,26,0.16); }
+
+    .featured-img-wrap {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+    }
+    .featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(8%) brightness(0.86);
+      transition: transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.6s ease;
+    }
+    .profile-featured:hover .featured-img-wrap img {
+      transform: scale(1.04);
+      filter: grayscale(0%) brightness(0.9);
+    }
+    .featured-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(46,64,54,0.1) 0%, transparent 35%, rgba(26,26,26,0.5) 100%);
+    }
+    .featured-role-badge {
+      position: absolute;
+      top: 1.75rem;
+      left: 1.75rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(242,240,233,0.9);
+      background: rgba(26,26,26,0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(242,240,233,0.18);
+    }
+    .featured-ghost-num {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.75rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 6rem;
+      color: rgba(242,240,233,0.1);
+      line-height: 1;
+      user-select: none;
+    }
+    .featured-content {
+      padding: 2.75rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    @media (min-width: 900px) {
+      .featured-content { padding: 3.5rem 4rem; }
+    }
+
+    /* ── Profile cards ── */
+    .profile-card {
+      position: relative;
+      border-radius: 2rem;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(26,26,26,0.07);
+      transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .profile-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 72px rgba(26,26,26,0.14);
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .profile-photo-wrap .profile-bg {
+      position: absolute;
+      inset: -5%;
+      background-size: cover;
+      background-position: center top;
+      filter: grayscale(12%) brightness(0.87);
+      transition: transform 0.75s cubic-bezier(0.23,1,0.32,1), filter 0.5s ease;
+    }
+    .profile-card:hover .profile-bg {
+      transform: scale(1.08);
+      filter: grayscale(0%) brightness(0.92);
+    }
+    .profile-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 38%, rgba(26,26,26,0.68) 100%);
+    }
+    .profile-role-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.5rem;
+      z-index: 2;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(242,240,233,0.85);
+      background: rgba(26,26,26,0.42);
+      backdrop-filter: blur(12px);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(242,240,233,0.14);
+    }
+    .card-index-num {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.4rem;
+      z-index: 2;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      color: rgba(242,240,233,0.38);
+    }
+    .profile-body {
+      padding: 1.75rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* ── Specialty pill ── */
+    .specialty-pill {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(46,64,54,0.07);
+      color: #2E4036;
+      border: 1px solid rgba(46,64,54,0.12);
+      margin: 0.18rem 0.18rem 0 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .specialty-pill:hover {
+      background: rgba(46,64,54,0.14);
+      border-color: rgba(46,64,54,0.25);
+    }
+
+    /* ── Experience bar ── */
+    .exp-bar-track {
+      height: 2px;
+      background: rgba(46,64,54,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .exp-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2E4036, #CC5833);
+      border-radius: 999px;
+      width: 0%;
+      transition: width 1.7s cubic-bezier(0.23,1,0.32,1);
+    }
+
+    /* ── Hero ghost number ── */
+    .hero-ghost-num {
+      position: absolute;
+      right: 2%;
+      top: 50%;
+      transform: translateY(-45%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(14rem, 26vw, 26rem);
+      color: rgba(242,240,233,0.035);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Hero floating badge ── */
+    .hero-float-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(242,240,233,0.06);
+      border: 1px solid rgba(242,240,233,0.12);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      padding: 0.55rem 1rem 0.55rem 0.7rem;
+    }
+    .hero-float-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #CC5833;
+    }
+
+    /* ── Stat card ── */
+    .stat-card {
+      background: rgba(242,240,233,0.04);
+      border: 1px solid rgba(242,240,233,0.07);
+      border-radius: 1.5rem;
+      padding: 1.75rem 2rem;
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+    .stat-card:hover {
+      background: rgba(242,240,233,0.08);
+      border-color: rgba(242,240,233,0.14);
+    }
+
+    /* ── Manifesto section ── */
+    .manifesto-section {
+      background: #1A1A1A;
+      position: relative;
+      overflow: hidden;
+    }
+    .manifesto-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(8rem, 16vw, 16rem);
+      color: rgba(255,255,255,0.025);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Divider line ── */
+    .section-eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: #CC5833;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Qualities strip ── */
+    .quality-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    @media (max-width: 640px) {
+      .quality-strip { grid-template-columns: 1fr; }
+    }
+    .quality-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid rgba(26,26,26,0.07);
+    }
+    .quality-item:last-child { border-right: none; }
+    @media (max-width: 640px) {
+      .quality-item { border-right: none; border-bottom: 1px solid rgba(26,26,26,0.07); }
+      .quality-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <!-- ── Header ── -->
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center">
+          <span class="font-serif text-crema text-sm italic font-semibold">CJ</span>
+        </div>
+        <span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span>
+      </a>
+      <div class="flex items-center gap-7">
+        <a href="index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a>
+        <a href="index.html#proceso"   class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Proceso</a>
+        <a href="conocenos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Conócenos</a>
+        <a href="recursos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Recursos</a>
+      </div>
+      <a href="index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0">
+        <span>Consultar</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="bg-musgo pt-44 pb-28 px-6 md:px-16 relative overflow-hidden">
+    <div class="hero-ghost-num">04</div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-arcilla/4 -translate-y-2/3 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-crema/2 -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="flex items-center gap-3 mb-8 opacity-0" id="hero-eye">
+        <div class="hero-float-badge">
+          <div class="hero-float-dot"></div>
+          <span class="font-mono text-[10px] tracking-[0.3em] uppercase text-crema/55">4 especialistas · Derecho digital</span>
+        </div>
+      </div>
+
+      <h1 class="font-serif text-crema italic leading-[0.86] mb-8 opacity-0" id="hero-ttl" style="font-size:clamp(3.2rem,8vw,7rem);">
+        Quiénes<br/>
+        <span class="font-sans not-italic font-light text-crema/30" style="font-size:0.55em; letter-spacing:0.02em;">somos</span>
+      </h1>
+
+      <div class="flex flex-col md:flex-row md:items-end gap-8 opacity-0" id="hero-sub">
+        <p class="font-sans text-crema/38 text-base leading-relaxed max-w-lg">
+          Un equipo de cuatro abogados especializados en derecho digital, tecnológico y de los medios. Precisión jurídica en cada asesoramiento, sin atajos.
+        </p>
+        <div class="shrink-0 flex items-center gap-3 md:ml-auto">
+          <div class="w-px h-10 bg-crema/10"></div>
+          <div>
+            <p class="font-serif text-crema/80 italic text-3xl leading-none">42</p>
+            <p class="font-mono text-[10px] tracking-widest uppercase text-crema/25 mt-1">Años combinados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Marquee strip ── -->
+  <div class="bg-arcilla py-3 px-6 overflow-hidden">
+    <div class="flex gap-8 whitespace-nowrap marquee-track font-mono text-[11px] tracking-[0.25em] uppercase text-crema/60">
+      <span>Derecho Digital</span><span class="text-crema/25">·</span>
+      <span>Propiedad Intelectual</span><span class="text-crema/25">·</span>
+      <span>Protección de Datos</span><span class="text-crema/25">·</span>
+      <span>Ciberseguridad</span><span class="text-crema/25">·</span>
+      <span>Derecho Audiovisual</span><span class="text-crema/25">·</span>
+      <span>Libertades Fundamentales</span><span class="text-crema/25">·</span>
+      <span>Derecho Digital</span><span class="text-crema/25">·</span>
+      <span>Propiedad Intelectual</span><span class="text-crema/25">·</span>
+      <span>Protección de Datos</span><span class="text-crema/25">·</span>
+      <span>Ciberseguridad</span><span class="text-crema/25">·</span>
+      <span>Derecho Audiovisual</span><span class="text-crema/25">·</span>
+      <span>Libertades Fundamentales</span><span class="text-crema/25">·</span>
+    </div>
+  </div>
+
+  <!-- ── Qualities strip ── -->
+  <div class="bg-crema border-b border-musgo/6 quality-strip">
+    <div class="quality-item reveal">
+      <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-arcilla mb-2">01</p>
+      <p class="font-serif text-carbon italic text-xl leading-tight mb-1.5">Precisión</p>
+      <p class="font-sans text-carbon/40 text-xs leading-relaxed">Cada dictamen jurídico está fundamentado en análisis exhaustivo y doctrina actualizada.</p>
+    </div>
+    <div class="quality-item reveal">
+      <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-arcilla mb-2">02</p>
+      <p class="font-serif text-carbon italic text-xl leading-tight mb-1.5">Claridad</p>
+      <p class="font-sans text-carbon/40 text-xs leading-relaxed">Traducimos la complejidad normativa en decisiones concretas y comprensibles para el cliente.</p>
+    </div>
+    <div class="quality-item reveal">
+      <p class="font-mono text-[10px] tracking-[0.3em] uppercase text-arcilla mb-2">03</p>
+      <p class="font-serif text-carbon italic text-xl leading-tight mb-1.5">Compromiso</p>
+      <p class="font-sans text-carbon/40 text-xs leading-relaxed">Cada caso se trata con la máxima dedicación, independientemente de su dimensión o complejidad.</p>
+    </div>
+  </div>
+
+  <!-- ── Team section ── -->
+  <section class="bg-crema py-24 px-6 md:px-16">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section intro -->
+      <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-16 mb-16 reveal">
+        <div class="flex-1">
+          <div class="flex items-center mb-5">
+            <span class="section-eyebrow-line"></span>
+            <p class="font-mono text-[11px] tracking-[0.3em] uppercase text-musgo/40">Nuestro equipo</p>
+          </div>
+          <h2 class="font-serif text-carbon italic leading-[0.88]" style="font-size:clamp(2.4rem,5vw,4.2rem);">
+            Cuatro mentes.<br/>Una sola dirección.
+          </h2>
+        </div>
+        <div class="max-w-xs">
+          <p class="font-sans text-carbon/42 text-sm leading-relaxed">
+            Cada miembro del equipo aporta una perspectiva única. Juntos cubrimos el espectro completo del derecho digital, tecnológico y mediático.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Alfonso Lorbes — Featured card ── -->
+      <div class="profile-featured mb-8 reveal">
+        <div class="featured-img-wrap">
+          <img src="imagenes/Alfonso_abogado.jpg" alt="Alfonso Lorbes">
+          <div class="featured-img-overlay"></div>
+          <span class="featured-role-badge">Socio Fundador</span>
+          <span class="featured-ghost-num">01</span>
+        </div>
+        <div class="featured-content">
+          <div>
+            <p class="font-mono text-[10px] tracking-[0.35em] uppercase text-arcilla mb-4">Director del despacho</p>
+            <h2 class="font-serif text-carbon italic leading-[0.88] mb-2" style="font-size:clamp(2.2rem,4vw,3.5rem);">Alfonso<br/>Lorbes</h2>
+            <p class="font-mono text-[11px] text-musgo/45 tracking-wider mb-5">15 años de experiencia</p>
+            <div class="exp-bar-track mb-7"><div class="exp-bar-fill" data-width="97"></div></div>
+            <blockquote class="font-serif text-musgo italic text-[1.2rem] leading-snug mb-6 pl-5 border-l-2 border-arcilla">
+              "El derecho digital no es una especialidad del futuro. Es la realidad jurídica del presente."
+            </blockquote>
+            <p class="font-sans text-carbon/52 text-sm leading-relaxed mb-6">
+              Fundador de Conceptos Jurídicos y referente en el derecho digital español. Ha asesorado a empresas tecnológicas, grandes medios de comunicación e instituciones públicas en el diseño y ejecución de su estrategia jurídica digital. Autor de publicaciones especializadas y ponente habitual en foros nacionales e internacionales de derecho tecnológico.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="specialty-pill">Derecho Digital</span>
+            <span class="specialty-pill">Propiedad Intelectual</span>
+            <span class="specialty-pill">Estrategia Jurídica</span>
+            <span class="specialty-pill">Derecho TIC</span>
+            <span class="specialty-pill">Compliance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 3-column grid: Carlos · Aranzazu · Antonina ── -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+        <!-- Carlos Mancebo -->
+        <div class="profile-card reveal">
+          <div class="profile-photo-wrap">
+            <div class="profile-bg" style="background-image:url('imagenes/foto carlos.png')"></div>
+            <span class="card-index-num">02</span>
+            <span class="profile-role-badge">Socio</span>
+          </div>
+          <div class="profile-body">
+            <div class="flex-1">
+              <h2 class="font-serif text-carbon italic text-[1.6rem] leading-tight mb-1">Carlos<br/>Mancebo</h2>
+              <p class="font-mono text-[10px] text-arcilla tracking-wider mb-4">12 años de experiencia</p>
+              <div class="exp-bar-track mb-5"><div class="exp-bar-fill" data-width="80"></div></div>
+              <p class="font-sans text-carbon/50 text-sm leading-relaxed mb-5">
+                Especialista en contratos de producción audiovisual, licencias de contenido y derechos de autor en entornos digitales. Asesor legal de productoras independientes y plataformas de streaming. Máster en Derecho del Entretenimiento por la UCM.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-auto">
+              <span class="specialty-pill">Derecho Audiovisual</span>
+              <span class="specialty-pill">Propiedad Intelectual</span>
+              <span class="specialty-pill">Licencias</span>
+              <span class="specialty-pill">Contratos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aranzazu Llampallas -->
+        <div class="profile-card reveal">
+          <div class="profile-photo-wrap">
+            <div class="profile-bg" style="background-image:url('imagenes/foto aran.png')"></div>
+            <span class="card-index-num">03</span>
+            <span class="profile-role-badge">Asociada Senior</span>
+          </div>
+          <div class="profile-body">
+            <div class="flex-1">
+              <h2 class="font-serif text-carbon italic text-[1.6rem] leading-tight mb-1">Aranzazu<br/>Llampallas</h2>
+              <p class="font-mono text-[10px] text-arcilla tracking-wider mb-4">9 años de experiencia</p>
+              <div class="exp-bar-track mb-5"><div class="exp-bar-fill" data-width="60"></div></div>
+              <p class="font-sans text-carbon/50 text-sm leading-relaxed mb-5">
+                Experta en RGPD, privacidad digital y ciberseguridad jurídica. Ha asesorado a más de 150 empresas en la adaptación a la normativa europea de protección de datos. Colaboradora habitual de la AEPD en jornadas de cumplimiento normativo.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-auto">
+              <span class="specialty-pill">Protección de Datos</span>
+              <span class="specialty-pill">RGPD</span>
+              <span class="specialty-pill">Ciberseguridad</span>
+              <span class="specialty-pill">Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Antonina Lysenko -->
+        <div class="profile-card reveal">
+          <div class="profile-photo-wrap">
+            <div class="profile-bg" style="background-image:url('https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80')"></div>
+            <span class="card-index-num">04</span>
+            <span class="profile-role-badge">Asociada</span>
+          </div>
+          <div class="profile-body">
+            <div class="flex-1">
+              <h2 class="font-serif text-carbon italic text-[1.6rem] leading-tight mb-1">Antonina<br/>Lysenko</h2>
+              <p class="font-mono text-[10px] text-arcilla tracking-wider mb-4">6 años de experiencia</p>
+              <div class="exp-bar-track mb-5"><div class="exp-bar-fill" data-width="40"></div></div>
+              <p class="font-sans text-carbon/50 text-sm leading-relaxed mb-5">
+                Especializada en derechos fundamentales digitales y derecho internacional de internet. Experta en libertad de expresión online y litigación ante organismos europeos. Ha colaborado con el Consejo de Europa en proyectos de regulación tecnológica.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-auto">
+              <span class="specialty-pill">Derechos Fundamentales</span>
+              <span class="specialty-pill">Derecho Internacional</span>
+              <span class="specialty-pill">Libertad de Expresión</span>
+              <span class="specialty-pill">Litigación</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Manifesto ── -->
+  <section class="manifesto-section py-28 px-6 md:px-16">
+    <div class="manifesto-bg-text">Derecho</div>
+    <div class="max-w-4xl mx-auto relative z-10 text-center reveal">
+      <p class="font-mono text-[11px] tracking-[0.35em] uppercase text-arcilla mb-8">Nuestra filosofía</p>
+      <h2 class="font-serif text-crema italic leading-[0.9] mb-8" style="font-size:clamp(2rem,5vw,4.2rem);">
+        "El asesoramiento jurídico en el entorno digital debe ser preciso, comprensible y, sobre todo, útil."
+      </h2>
+      <div class="w-12 h-px bg-arcilla mx-auto mb-8"></div>
+      <p class="font-sans text-crema/30 text-sm leading-relaxed max-w-xl mx-auto">
+        No creemos en el derecho como barrera. Creemos en el derecho como instrumento que permite a empresas y personas operar con seguridad en el entorno digital. Esa convicción guía cada consulta, cada dictamen, cada estrategia que diseñamos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Stats & Philosophy ── -->
+  <section class="bg-musgo py-24 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="flex items-center mb-6">
+            <span class="section-eyebrow-line" style="background:#CC5833;"></span>
+            <p class="font-mono text-[11px] tracking-[0.35em] uppercase text-arcilla">En cifras</p>
+          </div>
+          <h2 class="font-serif text-crema italic leading-[0.92] mb-6" style="font-size:clamp(2rem,4vw,3.5rem);">
+            El derecho digital<br/>requiere claridad,<br/>no complejidad.
+          </h2>
+          <p class="font-sans text-crema/35 text-sm leading-relaxed">
+            Cada miembro del equipo ha construido su práctica sobre una especialidad concreta. Juntos formamos una estructura única en el panorama jurídico digital español.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <div class="stat-card">
+            <p class="font-serif text-crema/90 italic text-4xl mb-1">+200</p>
+            <p class="font-mono text-[10px] tracking-widest uppercase text-crema/25">Empresas asesoradas</p>
+          </div>
+          <div class="stat-card">
+            <p class="font-serif text-crema/90 italic text-4xl mb-1">42</p>
+            <p class="font-mono text-[10px] tracking-widest uppercase text-crema/25">Años combinados</p>
+          </div>
+          <div class="stat-card" style="background:rgba(204,88,51,0.1); border-color:rgba(204,88,51,0.18);">
+            <p class="font-serif text-crema/90 italic text-4xl mb-1">4</p>
+            <p class="font-mono text-[10px] tracking-widest uppercase text-crema/25">Especialistas</p>
+          </div>
+          <div class="stat-card">
+            <p class="font-serif text-crema/90 italic text-4xl mb-1">100%</p>
+            <p class="font-mono text-[10px] tracking-widest uppercase text-crema/25">Derecho digital</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="bg-crema py-28 px-6 md:px-16">
+    <div class="max-w-4xl mx-auto reveal">
+      <div class="bg-musgo rounded-[2.5rem] px-8 md:px-16 py-14 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-arcilla/8 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+        <div class="relative z-10">
+          <p class="font-mono text-[11px] tracking-[0.35em] uppercase text-arcilla mb-5">¿Tienes una consulta?</p>
+          <h2 class="font-serif text-crema italic leading-[0.92] mb-6" style="font-size:clamp(2rem,4.5vw,3.6rem);">
+            Hablemos de tu caso
+          </h2>
+          <p class="font-sans text-crema/35 text-sm leading-relaxed max-w-md mx-auto mb-10">
+            Primera consulta orientativa sin compromiso. Cuéntanos tu situación y te indicaremos el mejor camino jurídico.
+          </p>
+          <a href="index.html#contacto" class="btn-mag inline-flex items-center gap-3 bg-crema text-musgo text-[13px] font-semibold px-9 py-4 rounded-full border border-crema">
+            <span>Contactar con el equipo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="bg-carbon text-crema pt-16 pb-10 px-6 md:px-16 rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-musgo flex items-center justify-center">
+            <span class="font-serif text-crema text-sm italic font-semibold">CJ</span>
+          </div>
+          <div>
+            <p class="font-sans text-crema font-semibold text-sm">Conceptos Jurídicos</p>
+            <p class="font-mono text-crema/25 text-[11px] tracking-widest uppercase">Despacho de Abogados</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 font-sans text-sm text-crema/35">
+          <a href="index.html" class="hover:text-crema transition-colors">Inicio</a>
+          <a href="index.html#servicios" class="hover:text-crema transition-colors">Servicios</a>
+          <a href="conocenos.html" class="text-arcilla/70 hover:text-arcilla transition-colors">Conócenos</a>
+          <a href="recursos.html" class="hover:text-crema transition-colors">Recursos</a>
+        </div>
+      </div>
+      <div class="hr-fade text-crema/8 mb-8"></div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-mono text-crema/15 text-[11px]">© 2026 Conceptos Jurídicos · Todos los derechos reservados</p>
+        <div class="flex items-center gap-5 flex-wrap justify-center">
+          <a href="404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+          <span class="text-crema/10 text-[11px]">·</span>
+          <a href="proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+          <span class="text-crema/10 text-[11px]">·</span>
+          <a href="404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+          <div class="flex items-center gap-2 ml-1">
+            <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+            <span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    window.addEventListener('scroll', () =>
+      document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 60),
+      { passive:true }
+    );
+
+    // Hero entrance
+    gsap.timeline({ delay: 0.15 })
+      .fromTo('#hero-eye', { opacity:0, y:16 }, { opacity:1, y:0, duration:0.7,  ease:'power3.out' })
+      .fromTo('#hero-ttl', { opacity:0, y:70 }, { opacity:1, y:0, duration:1.15, ease:'power3.out' }, '-=0.4')
+      .fromTo('#hero-sub', { opacity:0, y:24 }, { opacity:1, y:0, duration:0.8,  ease:'power3.out' }, '-=0.55');
+
+    // Scroll reveals — staggered
+    const reveals = gsap.utils.toArray('.reveal');
+    reveals.forEach((el, i) => {
+      gsap.fromTo(el,
+        { opacity:0, y:50 },
+        { opacity:1, y:0, duration:0.9, ease:'power3.out',
+          scrollTrigger:{ trigger:el, start:'top 87%', toggleActions:'play none none none' }
+        }
+      );
+    });
+
+    // Cards staggered on grid
+    const cardGroups = document.querySelectorAll('.grid .profile-card');
+    cardGroups.forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity:0, y:60 },
+        { opacity:1, y:0, duration:0.85, ease:'power3.out', delay: i * 0.12,
+          scrollTrigger:{ trigger:card, start:'top 90%', toggleActions:'play none none none' }
+        }
+      );
+    });
+
+    // Experience bars
+    gsap.utils.toArray('.exp-bar-fill').forEach(bar => {
+      ScrollTrigger.create({
+        trigger: bar,
+        start: 'top 85%',
+        onEnter: () => { bar.style.width = bar.dataset.width + '%'; }
+      });
+    });
+  </script>
+</body>
+</html>

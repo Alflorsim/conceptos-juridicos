@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 06 — Ciberseguridad | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.45) 0%,rgba(26,26,26,0.2) 35%,rgba(26,26,26,0.92) 100%),url('../imagenes/6.jpg');background-size:cover;background-position:center;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">06 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 06 · Seguridad Digital</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Ciberseguridad<br/>y Redes Sociales</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">NIS2</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">DSA</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">DMA</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">ENISA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Definición (UIT)</h3>
+        <p>Recopilación de herramientas, políticas, conceptos de seguridad, directrices, enfoques de gestión, acciones, formación, mejores prácticas y tecnologías para proteger el entorno cibernético y los activos de personas físicas y jurídicas.</p>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/6.jpg" alt="Ciberseguridad y código digital">
+          <figcaption>La ciberseguridad protege el entorno digital frente a amenazas y ciberataques</figcaption>
+        </figure>
+
+        <h3>Pilares CIA</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Confidencialidad (C)</strong><p>Solo los usuarios autorizados tienen acceso a la información, evitando su divulgación no autorizada.</p></div>
+          <div class="mini-card"><strong>Integridad (I)</strong><p>La información está protegida contra modificaciones o destrucciones no autorizadas. El dato es exacto y no ha sido alterado.</p></div>
+          <div class="mini-card"><strong>Disponibilidad (A)</strong><p>Los sistemas y la información son accesibles de manera fiable cuando el usuario autorizado lo necesite.</p></div>
+        </div>
+
+        <h3>Riesgos principales</h3>
+        <ul>
+          <li><strong>Hacking:</strong> Ataque a vulnerabilidades de redes para obtener control o acceso no autorizado.</li>
+          <li><strong>Malware:</strong> Software malicioso (virus, troyanos, ransomware) que busca dañar o robar información.</li>
+          <li><strong>Phishing:</strong> Engaño mediante mensajes falsos para robar datos sensibles como contraseñas o datos bancarios.</li>
+          <li><strong>Denegación de Servicio (DoS/DDoS):</strong> Sobrecarga de un sistema para hacerlo inaccesible e interrumpir operaciones críticas.</li>
+        </ul>
+
+        <h3>Medidas de ciberseguridad</h3>
+        <ul>
+          <li><strong>Técnicas:</strong> Cifrado (encriptación), firewalls, antivirus, software de gestión de identidades y accesos (IAM).</li>
+          <li><strong>Organizativas:</strong> Políticas de protección de datos, secreto de claves, servicios de respuesta ante incidentes.</li>
+          <li><strong>Prevención:</strong> Detección temprana de amenazas para identificar ataques antes de que ocurran.</li>
+        </ul>
+
+        <h3>Marco normativo europeo</h3>
+        <p><span class="law-ref">ENISA</span> — Agencia de la Unión Europea para la Ciberseguridad. Su mandato es alcanzar un elevado nivel común de ciberseguridad, apoyar a las autoridades nacionales y a las instituciones de la UE con asesoramiento científico y técnico, actuando con independencia y evitando la duplicación con las actividades nacionales.</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>NIS 1 — Directiva (UE) 2016/1148</strong><p>Primera norma europea sobre seguridad de redes y sistemas de información.</p></div>
+          <div class="mini-card"><strong>NIS 2 — Directiva (UE) 2022/2555</strong><p>Requisitos más estrictos, mayor control en la cadena de suministro y notificaciones de incidentes más precisas.</p></div>
+        </div>
+        <p><span class="law-ref">España:</span> Ley 36/2015 de Seguridad Nacional y RD 12/2018 (que traspuso la NIS 1), en espera de la aprobación de la Ley de Coordinación y Gobernanza de la Ciberseguridad para incorporar la NIS 2.</p>
+
+        <h3>Redes Sociales y sus riesgos</h3>
+        <p>Plataformas digitales de comunicación global que ponen en contacto a gran número de usuarios. Herramientas online que favorecen el libre intercambio y la participación.</p>
+        <p><strong>Tipos de redes:</strong></p>
+        <ul>
+          <li>Redes de transmisión de ideas u opiniones.</li>
+          <li>Redes para compartir elementos audiovisuales.</li>
+          <li>Redes de comunicación de carácter privado o semiprivado.</li>
+          <li>Redes con finalidades profesionales u otras.</li>
+        </ul>
+        <p><strong>Riesgos principales:</strong></p>
+        <ul>
+          <li><strong>Generales:</strong> Desconocimiento de la trascendencia jurídica de lo que se publica, conflictos con terceros, riesgos específicos para menores.</li>
+          <li><strong>Específicos:</strong> Pérdida de privacidad, delitos de odio, vulneración de propiedad intelectual, enaltecimiento del terrorismo.</li>
+          <li><strong>En materia de PI:</strong> Vulneraciones por usuarios de la red social, y usos de obras por la propia plataforma.</li>
+        </ul>
+
+        <h3>DSA y DMA</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>DSA — Ley de Servicios Digitales</strong><p><span class="law-ref">Reglamento (UE) 2022/2065</span> — Regula plataformas digitales para crear un entorno seguro y proteger los derechos de los usuarios.</p></div>
+          <div class="mini-card"><strong>DMA — Ley de Mercados Digitales</strong><p><span class="law-ref">Reglamento (UE) 2022/1925</span> — Garantiza mercados digitales justos y competitivos, protegiendo la seguridad de los usuarios en línea.</p></div>
+        </div>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Definición UIT</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Pilares CIA</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Riesgos principales</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Medidas de seguridad</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>ENISA y Marco EU</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Redes Sociales y Tipos</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Riesgos Redes Sociales</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>DSA y DMA</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">NIS2 — Directiva (UE) 2022/2555</p>
+            <p class="sidebar-law-item">DSA — Reglamento (UE) 2022/2065</p>
+            <p class="sidebar-law-item">DMA — Reglamento (UE) 2022/1925</p>
+            <p class="sidebar-law-item">ENISA — Agencia EU Ciberseguridad</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div>
+              <div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 06 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">Consultar sobre este tema</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-5.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Propiedad Intelectual</p></a>
+      <a href="bloque-7.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Publicidad →</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

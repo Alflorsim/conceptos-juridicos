@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 01 — El Ordenamiento Jurídico | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.3) 0%,rgba(26,26,26,0.15) 35%,rgba(26,26,26,0.88) 100%),url('../imagenes/1.jpg');background-size:cover;background-position:center;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">01 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 01 · Fundamentos del Derecho</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">El Ordenamiento<br/>Jurídico Español</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Fuentes del Derecho</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Derecho Digital</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Derecho UE</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Temas 1 · 2 · 3</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <!-- Main content -->
+      <div class="bloque-body reveal">
+
+        <h3>Tema 1 · Fuentes del Derecho</h3>
+        <p>El Ordenamiento Jurídico Español regula el origen de las normas jurídicas a través de dos tipos de fuentes:</p>
+        <ul>
+          <li><strong>Fuentes materiales:</strong> Organismos o fuerzas sociales con facultad para crear derecho, como las Cortes Generales.</li>
+          <li><strong>Fuentes formales:</strong> Los modos en que se manifiesta el derecho: la ley, la costumbre y los principios generales del derecho.</li>
+        </ul>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/1.jpg" alt="Documentos y fuentes del derecho">
+          <figcaption>Las fuentes formales del derecho establecen el marco normativo del ordenamiento jurídico español</figcaption>
+        </figure>
+
+        <h3>División de Poderes</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Poder Ejecutivo</strong><p>Dirige la política interior y exterior y ejecuta las leyes. Se identifica con el Gobierno.</p></div>
+          <div class="mini-card"><strong>Poder Legislativo</strong><p>Representado por las Cortes Generales (Congreso y Senado). Elabora y dicta las leyes.</p></div>
+          <div class="mini-card"><strong>Poder Judicial</strong><p>Administra justicia a través de juzgados y tribunales, aplicando las normas vigentes.</p></div>
+          <div class="mini-card"><strong>Constitución Española 1978</strong><p>Norma Suprema del ordenamiento jurídico. Obliga a ciudadanos y poderes públicos.</p></div>
+        </div>
+        <p><span class="law-ref">Jurisprudencia</span> — Doctrina reiterada del Tribunal Supremo al aplicar la ley, la costumbre y los principios generales. Sirve para complementar el ordenamiento jurídico.</p>
+
+        <h3>Jerarquía de Tribunales</h3>
+        <ul>
+          <li>Juzgados de primera instancia — Derecho civil</li>
+          <li>Juzgados de instrucción — Derecho penal</li>
+          <li>Juzgados de lo penal — Derecho penal</li>
+          <li>Juzgados de lo social — Derecho laboral</li>
+          <li>Juzgados de lo contencioso — Derecho público-administrativo</li>
+          <li>Audiencia Provincial — Fase de recurso</li>
+          <li>Audiencia Nacional</li>
+          <li>Tribunales Superiores de Justicia de las CCAA (TSJ)</li>
+          <li>Tribunal Supremo</li>
+          <li>Tribunal Constitucional</li>
+        </ul>
+
+        <h3>Tema 2 · Aplicación de Normas y Derecho Europeo</h3>
+        <p>Tres criterios de aplicación de las normas:</p>
+        <ul>
+          <li><strong>Jerarquía:</strong> La norma de rango superior prevalece y deroga a la de rango inferior.</li>
+          <li><strong>Tiempo:</strong> Una ley posterior deroga a la anterior.</li>
+          <li><strong>Competencia:</strong> Ciertas normas solo pueden regular contenidos específicos; si no se respeta, la norma es nula.</li>
+        </ul>
+        <p><strong>Eficacia temporal:</strong> Entrada en vigor generalmente a los 20 días naturales de su publicación en el BOE. La derogación puede ser expresa o tácita.</p>
+
+        <h3>Derecho de la Unión Europea</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Derecho Primario</strong><p>Tratados constitutivos y sus modificaciones. Nivel superior en la jerarquía europea.</p></div>
+          <div class="mini-card"><strong>Derecho Derivado</strong><p><span class="law-ref">Reglamento</span> alcance general y obligatorio. <span class="law-ref">Directiva</span> obliga al objetivo, requiere transposición nacional.</p></div>
+        </div>
+
+        <h3>Principio de Distribución Competencial</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Competencia exclusiva del Estado</strong><p>Materias contenidas en el art. 149 CE.</p></div>
+          <div class="mini-card"><strong>Competencia de las CCAA</strong><p>Materias contenidas en el art. 148 CE. Los Estatutos de Autonomía determinan las competencias de cada Comunidad.</p></div>
+          <div class="mini-card"><strong>Derecho foral</strong><p>Derecho civil propio de una CCAA que se aplica con preferencia al derecho común contenido en el Código Civil.</p></div>
+        </div>
+
+        <h3>Fuentes de Derecho No Estatales</h3>
+        <p>Se produce una internacionalización de las relaciones jurídicas personales y de los mercados:</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Derecho Internacional</strong><p>Tratados y convenios internacionales en los que España sea parte. Una vez publicados oficialmente en España, forman parte del ordenamiento interno (art. 96 CE).</p></div>
+          <div class="mini-card"><strong>Derecho Comunitario</strong><p>Tratados, reglamentos y directivas de la Unión Europea. El Reglamento tiene alcance general y obligatorio; la Directiva obliga al Estado a cumplir un objetivo en un plazo, requiriendo transposición nacional.</p></div>
+        </div>
+
+        <h3>Tema 3 · Derecho Digital</h3>
+        <p>Conjunto de normas que regulan las interacciones en el entorno digital y el uso de las TIC. Se distingue entre datos personales (sujetos a protección) y no personales. Las <strong>plataformas digitales</strong> son prestadores de servicios de la sociedad de la información que facilitan el acceso o almacenamiento de datos (redes sociales, streaming).</p>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/1.jpg" alt="Derecho digital y tecnologías emergentes">
+          <figcaption>El Derecho Digital regula las interacciones en el entorno TIC y las nuevas tecnologías emergentes</figcaption>
+        </figure>
+
+        <h3>Tecnologías Emergentes</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Inteligencia Artificial (IA)</strong><p>Máquinas diseñadas para simular la inteligencia humana mediante algoritmos.</p></div>
+          <div class="mini-card"><strong>Internet de las Cosas (IoT)</strong><p>Red de objetos cotidianos con sensores que comparten datos de forma autónoma.</p></div>
+          <div class="mini-card"><strong>Blockchain</strong><p>Tecnología de registro descentralizado y seguro de transacciones en «bloques» encadenados.</p></div>
+          <div class="mini-card"><strong>Big Data</strong><p>Tecnologías para gestionar y analizar conjuntos de datos masivos para identificar patrones.</p></div>
+        </div>
+        <p><span class="law-ref">Carta de Derechos Digitales</span> — Documento de referencia (julio 2021) para proteger los derechos de los ciudadanos en el entorno virtual. Su objetivo no es elaborar un proyecto de norma jurídica sino redactar un documento que sirva de referencia para una futura ley orgánica.</p>
+
+        <h3>Normativa de Referencia</h3>
+        <ul>
+          <li><span class="law-ref">Ley 13/2022, de 7 de julio</span> — General de Comunicación Audiovisual.</li>
+          <li><span class="law-ref">LO 3/2018, de 5 de diciembre</span> — Protección de datos personales y garantía de los derechos digitales (LOPDPGDD).</li>
+          <li><span class="law-ref">Declaración Europea sobre Derechos y Principios Digitales.</span></li>
+          <li><span class="law-ref">DSA — Ley de Servicios Digitales</span> — Reglamento (UE) 2022/2065, en vigor desde el 17 de febrero de 2024.</li>
+          <li><span class="law-ref">DMA — Ley de Mercados Digitales</span> — Reglamento (UE) 2022/1925, en vigor desde el 7 de marzo de 2024.</li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Fuentes del Derecho</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>División de Poderes</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Jerarquía de Tribunales</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Distribución Competencial</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derecho Europeo</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derecho Digital</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Tecnologías Emergentes</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Normativa</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">Constitución Española 1978</p>
+            <p class="sidebar-law-item">Art. 9.3 CE — Jerarquía normativa</p>
+            <p class="sidebar-law-item">Reglamento (UE) — alcance general</p>
+            <p class="sidebar-law-item">Carta de Derechos Digitales</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot active"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+              <div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 01 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">
+            Consultar sobre este tema
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest uppercase">Primer bloque</span>
+      <a href="bloque-2.html" class="flex items-center gap-3 group">
+        <div>
+          <p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p>
+          <p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Marco Constitucional →</p>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

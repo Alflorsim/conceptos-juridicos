@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 05 — Propiedad Intelectual | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.28) 0%,rgba(26,26,26,0.12) 35%,rgba(26,26,26,0.88) 100%),url('../imagenes/5.jpg');background-size:cover;background-position:center;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">05 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 05 · Creación e Innovación</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Propiedad<br/>Intelectual</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Autor</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Autoría colectiva</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Derechos morales</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Derechos patrimoniales</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Definición</h3>
+        <p>Conjunto de normas jurídicas que protegen las creaciones originales de las personas —obras artísticas, literarias o científicas— y les permiten controlar el uso y obtener beneficios de sus creaciones. El autor tiene derechos exclusivos, tanto personales como económicos, sobre su obra.</p>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/5.jpg" alt="Creación intelectual y autoría">
+          <figcaption>La propiedad intelectual protege las creaciones originales en el ámbito artístico, literario y científico</figcaption>
+        </figure>
+
+        <h3>El Autor</h3>
+        <p>Persona física que crea una obra original. La ley le garantiza una serie de derechos sobre ella. Premisas esenciales:</p>
+        <ul>
+          <li>Siempre debe ser una persona física individual (no la empresa directamente).</li>
+          <li>Debe ser el creador original de la obra.</li>
+          <li>Tiene derechos morales y patrimoniales sobre la misma.</li>
+        </ul>
+
+        <h3>Tipos de Autoría Colectiva</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Obra en Colaboración</strong><p>Creada por varios autores conjuntamente. La obra es única e indivisible; los derechos pertenecen a todos en conjunto. Para utilizarla es necesario el consentimiento de todos los autores.</p></div>
+          <div class="mini-card"><strong>Obra Colectiva</strong><p>Creada por varias personas bajo la iniciativa de una sola persona o empresa. Los derechos de autor recaen en el coordinador o empresa responsable.</p></div>
+          <div class="mini-card"><strong>Obra Compuesta</strong><p>Creación nueva basada en una obra anterior, con aporte original propio. La obra original conserva sus propios derechos. Se necesita el permiso del autor original.</p></div>
+        </div>
+
+        <h3>Derechos Morales y Patrimoniales</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Derechos morales (arts. 14–16)</strong><p>Irrenunciables e inalienables. Incluyen el derecho de paternidad, integridad, divulgación y arrepentimiento. Si fallece su titular, pueden ser ejercidos por los sujetos designados por el autor.</p></div>
+          <div class="mini-card"><strong>Derechos patrimoniales (arts. 17–23)</strong><p>Otorgan al titular un monopolio o derecho exclusivo de explotación: reproducción, distribución, comunicación pública y transformación. Son disponibles: pueden ser renunciados o transmitidos.</p></div>
+        </div>
+        <p><span class="law-ref">Artículo 2 TRLPI</span> — «La propiedad intelectual está integrada por los derechos de carácter personal y patrimonial, que atribuyen al autor la plena disposición y el derecho exclusivo a la explotación de la obra, sin más limitaciones que las establecidas en la ley.»</p>
+
+        <h3>Obras Derivadas y Tipos de Obras</h3>
+        <p><strong>Obras derivadas</strong> — creaciones que nacen sobre una obra preexistente:</p>
+        <ul>
+          <li>Traducciones y adaptaciones.</li>
+          <li>Revisiones, actualizaciones y anotaciones.</li>
+          <li>Compendios, resúmenes y extractos.</li>
+          <li>Arreglos musicales.</li>
+          <li>Cualquier transformación de una obra literaria, artística o científica.</li>
+        </ul>
+        <p><strong>Colecciones y bases de datos</strong> — Las colecciones de obras ajenas, de datos u otros elementos independientes que por su selección o disposición constituyan creaciones intelectuales, sin perjuicio de los derechos sobre dichos contenidos.</p>
+        <p><strong>Obras en internet</strong> — Textos en sitios web, obras multimedia, fotografías, periódicos online, bancos de datos, etc.</p>
+        <p><strong>Excepciones al objeto de PI</strong> — No pueden ser objeto de propiedad intelectual: las disposiciones legales o reglamentarias, las resoluciones de órganos jurisdiccionales, los actos, acuerdos, deliberaciones y dictámenes de los organismos públicos (art. 13 TRLPI).</p>
+
+        <h3>Canon Digital y Duración</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Canon digital</strong><p>Sistema de compensación equitativa por copia privada. Grava los dispositivos electrónicos, equipos o soportes capaces de producir, copiar o almacenar una copia de una obra protegida por PI.</p></div>
+          <div class="mini-card"><strong>Duración (art. 26 LPI)</strong><p>Los derechos de explotación duran toda la vida del autor y 70 años tras su muerte. En obras anónimas o colectivas: 70 años desde la divulgación lícita.</p></div>
+        </div>
+        <p><strong>Dominio público</strong> — La extinción de los derechos de explotación determina su paso al dominio público. Las obras de dominio público podrán ser utilizadas por cualquiera, siempre que se respete la autoría y la integridad de la obra.</p>
+
+        <h3>Límites y Extensiones</h3>
+        <p>La ley regula casos en los que la utilización de una obra no requiere autorización del titular (reproducciones provisionales, copia privada). Extensiones por razón del contenido:</p>
+        <ul>
+          <li>Reproducción, distribución o comunicación pública con fines de seguridad pública o procedimientos administrativos, judiciales o parlamentarios.</li>
+          <li>Actos de divulgación en beneficio de personas con discapacidad sin finalidad lucrativa.</li>
+          <li>Citas y reseñas de fragmentos para análisis, comentario o juicio crítico con fines docentes o de investigación.</li>
+          <li>Trabajos y artículos sobre temas de actualidad difundidos por medios de comunicación (debe citarse la fuente y el autor).</li>
+          <li>Obras vistas u oídas en informaciones sobre acontecimientos actuales.</li>
+          <li>Obras situadas en vías públicas.</li>
+          <li>La parodia de una obra divulgada, siempre que no dañe la obra original ni a su autor.</li>
+        </ul>
+
+        <h3>Cesión y Registro</h3>
+        <p>Los derechos de PI pueden transmitirse <em>inter vivos</em> o <em>mortis causa</em>. Toda cesión debe constar necesariamente por escrito (art. 45). El <strong>contrato de edición</strong> (art. 58) permite al autor ceder al editor el derecho de reproducir y distribuir su obra a cambio de compensación económica.</p>
+        <p><span class="law-ref">Registro de la Propiedad Intelectual (RD 281/2003)</span> — Registro único para todo el territorio nacional, con un Registro Central (Ministerio de Cultura) y Registros Territoriales gestionados por las CCAA. La inscripción es voluntaria y declarativa.</p>
+
+        <h3>Protección y Entidades de Gestión</h3>
+        <p>Mecanismos de protección: advertencia con símbolos © (art. 146 TRLPI), depósito notarial, y la <span class="law-ref">Comisión de Propiedad Intelectual</span> (art. 193 TRLPI) como órgano colegiado nacional.</p>
+        <p><strong>Entidades de gestión</strong> — Entes sin ánimo de lucro que garantizan la protección de los derechos de PI, sujetos a autorización:</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>De autores</strong><p>SGAE · CEDRO · VEGAP · DAMA</p></div>
+          <div class="mini-card"><strong>De intérpretes</strong><p>AIE · AISGE</p></div>
+          <div class="mini-card"><strong>De productores</strong><p>AGEDI · EGEDA</p></div>
+          <div class="mini-card"><strong>Gestión colectiva</strong><p>La duración del contrato de gestión no podrá ser superior a 3 años, renovable por períodos de 1 año. No se puede imponer como obligatoria.</p></div>
+        </div>
+
+        <h3>Licencias Abiertas</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Copyright</strong><p>Todos los derechos son reservados.</p></div>
+          <div class="mini-card"><strong>Copyleft</strong><p>Algunos derechos son reservados (total o parcialmente). Permite la libre distribución con ciertas condiciones.</p></div>
+          <div class="mini-card"><strong>GNU GPL</strong><p>Licencia libre creada por la Free Software Foundation para programas de ordenador. Promueve la libre distribución, instalación, uso y modificación sin posibilidad de apropiación de los derechos de explotación.</p></div>
+        </div>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Definición</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>El Autor</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Tipos de Autoría Colectiva</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derechos Morales y Patrimoniales</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Obras Derivadas</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Canon Digital y Duración</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Límites y Extensiones</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Cesión y Registro</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Entidades de Gestión</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Licencias Abiertas</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">Art. 2 TRLPI — Contenido PI</p>
+            <p class="sidebar-law-item">Art. 26 LPI — Duración 70 años</p>
+            <p class="sidebar-law-item">Art. 45 TRLPI — Cesión escrita</p>
+            <p class="sidebar-law-item">RD 281/2003 — Registro PI</p>
+            <p class="sidebar-law-item">Directiva 2001/29/CE</p>
+            <p class="sidebar-law-item">Convenio de Berna</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div>
+              <div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 05 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">Consultar sobre este tema</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-4.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Protección de Datos</p></a>
+      <a href="bloque-6.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Ciberseguridad →</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

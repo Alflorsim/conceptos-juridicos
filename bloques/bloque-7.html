@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 07 — Publicidad | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.32) 0%,rgba(26,26,26,0.15) 35%,rgba(26,26,26,0.9) 100%),url('../imagenes/7.jpg');background-size:cover;background-position:center;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">07 / 07</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 07 · Comunicación Comercial</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Publicidad y<br/>Comunicación Comercial</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">LGP</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">LGCA</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Autocontrol</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Contratos publicitarios</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Concepto de Publicidad</h3>
+        <p>Toda forma de comunicación realizada por una persona física o jurídica —pública o privada— en el ejercicio de una actividad comercial, industrial, artesanal o profesional, con el fin de promover la contratación de bienes, servicios, derechos u obligaciones. Se rige por la <span class="law-ref">Ley General de Publicidad (LGP)</span>.</p>
+        <p>Sus <strong>destinatarios</strong> son las personas a quienes se dirige el mensaje publicitario o a quienes puede alcanzar.</p>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/7.jpg" alt="Publicidad y comunicación digital">
+          <figcaption>La comunicación comercial digital amplía el alcance de la publicidad a escala global, sometida a la LGP</figcaption>
+        </figure>
+
+        <h3>Tipos de Comunicación Comercial Audiovisual</h3>
+        <p>La <span class="law-ref">Ley General de Comunicación Audiovisual (LGCA)</span> regula las distintas formas de inserción publicitaria en medios audiovisuales:</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Cuña / Spot publicitario</strong><p>Mensaje breve emitido en cortes o pausas durante la programación. Forma clásica de publicidad televisiva y radiofónica.</p></div>
+          <div class="mini-card"><strong>Televenta</strong><p>Oferta directa al público para la adquisición de bienes o servicios, con indicación de precio y forma de pedido.</p></div>
+          <div class="mini-card"><strong>Patrocinio televisivo</strong><p>Una empresa financia total o parcialmente un programa a cambio de mencionar su nombre, marca o imagen en él.</p></div>
+          <div class="mini-card"><strong>Emplazamiento de producto</strong><p><em>Product placement</em> — inclusión de un producto, servicio o marca dentro del contenido de un programa a cambio de remuneración.</p></div>
+          <div class="mini-card"><strong>Telepromoción</strong><p>Presentación oral o visual de bienes y servicios dentro de un programa por el propio presentador, integrada en la trama del espacio.</p></div>
+          <div class="mini-card"><strong>Autopromociones</strong><p>Mensajes del propio operador de comunicación audiovisual que promueven sus propios programas, canales o servicios.</p></div>
+        </div>
+
+        <h3>Publicidad Ilícita — Emisiones Prohibidas</h3>
+        <p>La LGP prohíbe expresamente las siguientes modalidades:</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Publicidad ilícita</strong><p>Vulnera la dignidad de las personas, discrimina por razón de sexo, raza, religión u orientación sexual, o atenta contra valores constitucionales.</p></div>
+          <div class="mini-card"><strong>Publicidad engañosa</strong><p>Induce o puede inducir a error a sus destinatarios, afectando a su comportamiento económico o perjudicando a un competidor.</p></div>
+          <div class="mini-card"><strong>Publicidad desleal</strong><p>Denigra a competidores, crea confusión con sus productos o se aprovecha indebidamente de su reputación. Infringe la Ley de Competencia Desleal.</p></div>
+          <div class="mini-card"><strong>Publicidad subliminal</strong><p>Mediante técnicas de producción de estímulos de intensidades fronterizas con los sentidos, actúa sobre el público sin ser percibida conscientemente.</p></div>
+        </div>
+
+        <h3>Autorregulación Publicitaria</h3>
+        <p>El sector publicitario complementa la regulación legal con mecanismos de autodisciplina:</p>
+        <ul>
+          <li><strong>Acuerdos generales:</strong> Compromisos voluntarios de toda la industria publicitaria para garantizar estándares éticos mínimos.</li>
+          <li><strong>Acuerdos sectoriales:</strong> Regulan las emisiones publicitarias dentro de un mismo sector específico (alimentación, juguetes, bebidas alcohólicas, farmacia…).</li>
+          <li><strong>Autocontrol (1995):</strong> Asociación para la Autorregulación de la Comunicación Comercial. Integra a agencias, anunciantes y medios, y cuenta con un Código de Conducta Publicitaria que actúa como norma ética y de autorregulación. Resuelve reclamaciones y emite dictámenes previos sobre anuncios.</li>
+          <li><strong>Código de autorregulación de contenidos televisivos e infancia (2004):</strong> Suscrito entre el Gobierno y los principales canales de TV para proteger a los menores en la comunicación comercial.</li>
+        </ul>
+
+        <h3>Contratos Publicitarios</h3>
+        <p>La LGP regula cuatro tipos de contratos que articulan las relaciones entre los operadores del mercado publicitario:</p>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Contrato de publicidad</strong><p>El anunciante encarga a una agencia la ejecución de la publicidad a cambio de una contraprestación.</p></div>
+          <div class="mini-card"><strong>Contrato de difusión</strong><p>La agencia o el anunciante encomienda a un medio de comunicación la difusión del mensaje publicitario ya elaborado.</p></div>
+          <div class="mini-card"><strong>Contrato de creación publicitaria</strong><p>Una persona física o jurídica crea elementos publicitarios (guion, diseño, música) por encargo de la agencia o anunciante.</p></div>
+          <div class="mini-card"><strong>Contrato de patrocinio</strong><p>El patrocinado recibe ayuda económica para realizar una actividad (deportiva, benéfica, cultural…) y, a cambio, se compromete a colaborar en la publicidad del patrocinador.</p></div>
+        </div>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Concepto de Publicidad</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Tipos Comunicación Audiovisual</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Publicidad Ilícita</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Autorregulación</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Contratos Publicitarios</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">LGP — Ley General de Publicidad</p>
+            <p class="sidebar-law-item">LGCA — Ley Comunicación Audiovisual</p>
+            <p class="sidebar-law-item">Ley de Competencia Desleal</p>
+            <p class="sidebar-law-item">Autocontrol — creado en 1995</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div><div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 07 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">Consultar sobre este tema</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-6.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Ciberseguridad</p></a>
+      <a href="bloque-8.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Contratos →</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

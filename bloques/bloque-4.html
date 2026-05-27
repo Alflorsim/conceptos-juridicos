@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 04 — Protección de Datos | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.4) 0%,rgba(26,26,26,0.18) 35%,rgba(26,26,26,0.9) 100%),url('../imagenes/4.jpg');background-size:cover;background-position:center;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">04 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 04 · Privacidad Digital</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Protección de<br/>Datos Personales</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">RGPD 2016/679</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">LOPDPGDD</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">AEPD</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Derecho al olvido</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Reconocimiento constitucional</h3>
+        <p>El derecho a la protección de datos es una facultad del ciudadano para oponerse a que sus datos personales sean usados para fines distintos al que justificó su obtención. Se configura como un derecho fundamental autónomo.</p>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/4.jpg" alt="Protección de datos y privacidad digital">
+          <figcaption>El RGPD establece el marco europeo de referencia para el tratamiento y protección de los datos personales</figcaption>
+        </figure>
+
+        <h3>Tipos de Datos</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Datos personales</strong><p>Cualquier información relativa a un individuo identificado o identificable («interesado»), de forma directa o indirecta.</p></div>
+          <div class="mini-card"><strong>Datos especialmente protegidos</strong><p>Origen étnico/racial · Opiniones políticas · Convicciones religiosas · Afiliación sindical · Datos genéticos o biométricos · Salud y orientación sexual.</p></div>
+        </div>
+
+        <h3>Tratamiento de datos — Artículo 4 RGPD</h3>
+        <p>Cualquier operación sobre datos personales, automatizada o no: recogida, registro, organización, conservación, supresión...</p>
+        <p>Principios básicos: <span class="tag-pill">Lealtad y transparencia</span> <span class="tag-pill">Limitación de finalidad</span> <span class="tag-pill">Minimización</span> <span class="tag-pill">Exactitud</span> <span class="tag-pill">Limitación del plazo</span></p>
+
+        <h3>Derechos de los interesados</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Derechos ARCO (Convenio 108)</strong><p>Acceso · Rectificación · Cancelación · Oposición</p></div>
+          <div class="mini-card"><strong>Nuevos derechos RGPD</strong><p>Limitación del tratamiento · Portabilidad de datos · Derecho al olvido</p></div>
+        </div>
+
+        <h3>Actores del tratamiento</h3>
+        <ul>
+          <li><strong>Responsable:</strong> Entidad que decide la finalidad y los medios del tratamiento de los datos.</li>
+          <li><strong>Encargado:</strong> Trata los datos por cuenta del responsable, siguiendo sus instrucciones.</li>
+          <li><strong>Delegado de Protección de Datos (DPO):</strong> Puede designarse voluntariamente; obligatorio cuando puedan derivarse riesgos importantes para derechos y libertades.</li>
+        </ul>
+
+        <h3>Derechos Individuales — RGPD</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Derecho de acceso (art. 15 RGPD)</strong><p>El interesado tiene derecho a obtener del responsable confirmación de si se están tratando o no datos personales que le conciernen.</p></div>
+          <div class="mini-card"><strong>Derecho de rectificación (art. 16 RGPD)</strong><p>Derecho a que el responsable rectifique los datos personales inexactos que le conciernan.</p></div>
+          <div class="mini-card"><strong>Derecho de oposición (art. 21 RGPD)</strong><p>Derecho del afectado a que no se lleve a cabo el tratamiento de sus datos personales o se cese en el mismo.</p></div>
+          <div class="mini-card"><strong>Derecho a la portabilidad (art. 20 RGPD)</strong><p>Derecho del interesado a obtener una copia de sus datos en un formato mecanizado, de uso común y lectura mecánica.</p></div>
+        </div>
+
+        <h3>Marco Normativo</h3>
+        <p><span class="law-ref">Art. 18.4 CE</span> — Limitará el uso de la informática para garantizar el honor y la intimidad personal y familiar de los ciudadanos.</p>
+        <p><span class="law-ref">RGPD — Reglamento (UE) 2016/679</span> — Relativo a la protección de personas físicas en materia de tratamiento y libre circulación de datos personales.</p>
+        <p><span class="law-ref">LOPDPGDD — LO 3/2018, de 5 de diciembre</span> — Tiene por objeto adaptar el Ordenamiento Jurídico español al RGPD y garantiza los derechos digitales.</p>
+        <p><span class="law-ref">AEPD</span> — Agencia Española de Protección de Datos. Autoridad de control nacional donde los interesados pueden interponer reclamaciones.</p>
+        <p><span class="law-ref">Derecho al olvido (art. 17 RGPD)</span> — Permite a los ciudadanos impedir la difusión de información personal a través de internet cuando ya no es necesaria o carece de interés público. Es un derecho subjetivo de titularidad individual que debe analizarse caso por caso.</p>
+
+        <h3>Condiciones de licitud del tratamiento</h3>
+        <ul>
+          <li>Consentimiento explícito del interesado.</li>
+          <li>Ejecución de un contrato en el que el interesado sea parte.</li>
+          <li>Cumplimiento de una obligación legal.</li>
+          <li>Protección de intereses vitales del interesado o de terceros.</li>
+          <li>Misión en interés público o ejercicio de poderes públicos.</li>
+          <li>Satisfacción de intereses legítimos del responsable, siempre que no prevalezcan los derechos del interesado.</li>
+        </ul>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Reconocimiento constitucional</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Tipos de Datos</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Tratamiento — Art. 4 RGPD</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derechos ARCO y RGPD</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Actores del tratamiento</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derechos individuales RGPD</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Marco normativo</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Licitud del tratamiento</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">RGPD — Reglamento (UE) 2016/679</p>
+            <p class="sidebar-law-item">LOPDPGDD — LO 3/2018</p>
+            <p class="sidebar-law-item">AEPD — Agencia Española</p>
+            <p class="sidebar-law-item">Derecho al olvido — STS</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div>
+              <div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 04 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">Consultar sobre este tema</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-3.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Honor e Intimidad</p></a>
+      <a href="bloque-5.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Propiedad Intelectual →</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>

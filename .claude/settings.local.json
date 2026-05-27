@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start https://app.netlify.com/drop)",
+      "Bash(netlify --version)",
+      "Bash(npm install *)",
+      "Bash(npx netlify-cli *)",
+      "Bash(npx surge *)",
+      "Bash(netlify login *)",
+      "Bash(start \"c:\\\\WEB TRABAJOS\\\\conceptos-juridicos\\\\index.html\")",
+      "Bash(npx serve *)",
+      "Bash(start http://localhost:3000)",
+      "Bash(Select-Object FullName)",
+      "Bash(start http://localhost:3000/conocenos.html)",
+      "Bash(start http://localhost:3000/recursos.html)",
+      "PowerShell(Start-Process \"c:\\\\WEB TRABAJOS\\\\conceptos-juridicos\\\\index.html\")",
+      "Bash(python -m http.server 3000)",
+      "Bash(Start-Process \"http://localhost:3000/recursos.html\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/recursos.html)",
+      "PowerShell(Start-Process \"http://localhost:3000/recursos.html\")",
+      "Bash(netstat -ano)",
+      "PowerShell(& cmd.exe /c \"start http://localhost:3000/recursos.html\")",
+      "PowerShell(Stop-Process -Id 3688 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 8520 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Process -FilePath \"python\" -ArgumentList \"-m\", \"http.server\", \"3000\" -WorkingDirectory \"c:\\\\WEB TRABAJOS\\\\conceptos-juridicos\" -WindowStyle Hidden; Start-Sleep -Seconds 2; $r = Invoke-WebRequest -Uri \"http://localhost:3000/recursos.html\" -UseBasicParsing -ErrorAction SilentlyContinue; Write-Host \"Status: $\\($r.StatusCode\\)\")",
+      "PowerShell($pids = \\(netstat -ano | Select-String \":3000 \" | ForEach-Object { \\($_ -split '\\\\s+'\\)[-1] } | Sort-Object -Unique\\); foreach \\($p in $pids\\) { Stop-Process -Id $p -Force -ErrorAction SilentlyContinue }; Write-Host \"Puertos cerrados\")",
+      "PowerShell(Get-Process -Id 10648)",
+      "PowerShell(& cmd.exe /c \"start http://localhost:8080/recursos.html\")",
+      "Bash(gh auth *)",
+      "PowerShell(gh --version 2>$null)"
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque 03 — Honor, Intimidad e Imagen | Conceptos Jurídicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>tailwind.config={theme:{extend:{colors:{musgo:'#2E4036',arcilla:'#CC5833',crema:'#F2F0E9',carbon:'#1A1A1A'},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['"Cormorant Garamond"','serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    #site-header.scrolled{background:rgba(242,240,233,0.9)!important;backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(46,64,54,0.12);}
+    .bloque-hero-img{background-image:linear-gradient(to bottom,rgba(26,26,26,0.35) 0%,rgba(26,26,26,0.15) 35%,rgba(26,26,26,0.9) 100%),url('../imagenes/3.jpg');background-size:cover;background-position:center top;}
+  </style>
+</head>
+<body class="bg-crema text-carbon font-sans overflow-x-hidden">
+
+  <header id="site-header" class="fixed top-5 left-0 right-0 z-50 px-4 flex justify-center">
+    <nav class="flex items-center justify-between gap-6 px-5 py-3 rounded-full border border-musgo/15 bg-crema/50 w-full max-w-4xl">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic font-semibold">CJ</span></div><span class="font-mono text-[11px] tracking-[0.25em] uppercase text-musgo hidden sm:block">Conceptos Jurídicos</span></a>
+      <div class="flex items-center gap-5"><a href="../index.html#servicios" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Servicios</a><a href="../conocenos.html" class="font-sans text-[13px] font-medium text-carbon/60 hover:text-musgo transition-colors">Conócenos</a><a href="../recursos.html" class="font-sans text-[13px] font-semibold text-arcilla hover:text-musgo transition-colors">Recursos</a></div>
+      <a href="../index.html#contacto" class="btn-mag bg-musgo text-crema text-[13px] font-medium px-5 py-2.5 rounded-full border border-musgo shrink-0"><span>Consultar</span></a>
+    </nav>
+  </header>
+
+  <div class="back-bar">
+    <a href="../recursos.html" class="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-musgo/60 hover:text-musgo transition-colors"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Volver a Recursos</a>
+    <div class="flex items-center gap-3">
+      <div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-musgo/30"></span><span class="w-2 h-2 rounded-full bg-musgo/30"></span>
+        <span class="w-2 h-2 rounded-full bg-arcilla"></span>
+        <span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span><span class="w-2 h-2 rounded-full bg-musgo/20"></span>
+      </div>
+      <span class="font-mono text-[11px] text-carbon/25 tracking-widest">03 / 08</span>
+    </div>
+  </div>
+
+  <section class="bloque-hero bloque-hero-img">
+    <div class="relative z-10 max-w-5xl w-full mx-auto px-6 md:px-0">
+      <p class="font-mono text-[11px] tracking-[0.38em] uppercase text-arcilla mb-4 opacity-0" id="eye">Bloque 03 · Derechos Personalísimos</p>
+      <h1 class="font-serif text-crema italic leading-[0.88] mb-6 opacity-0" id="ttl" style="font-size:clamp(2.8rem,6.5vw,5.8rem);">Honor, Intimidad<br/>y Propia Imagen</h1>
+      <div class="flex flex-wrap gap-2 opacity-0" id="tags">
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Artículo 18 CE</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">LO 1/1982</span>
+        <span class="font-mono text-[10px] px-3 py-1.5 rounded-full bg-crema/10 border border-crema/20 text-crema/65">Rectificación</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-crema py-16 px-6 md:px-16">
+    <div class="bloque-layout">
+
+      <div class="bloque-body reveal">
+
+        <h3>Artículo 18 CE — Garantías constitucionales</h3>
+        <ul>
+          <li>Se garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen.</li>
+          <li>El domicilio es inviolable. Ninguna entrada o registro sin consentimiento o resolución judicial.</li>
+          <li>Se garantiza el secreto de las comunicaciones postales, telegráficas y telefónicas.</li>
+          <li>La ley limitará el uso de la informática para garantizar el honor y la intimidad de los ciudadanos.</li>
+        </ul>
+
+        <figure class="bloque-img">
+          <img src="../imagenes/3.jpg" alt="Intimidad y privacidad personal">
+          <figcaption>El derecho a la intimidad protege el ámbito más reservado de la vida personal y familiar</figcaption>
+        </figure>
+
+        <h3>Derecho al Honor</h3>
+        <p>Se centra en la protección frente a la atribución de hechos difamantes o denigratorios que desmerecen la consideración ajena. La libertad de información prevalece si la información es <strong>veraz</strong> y trata sobre asuntos de <strong>relevancia pública o interés general</strong>.</p>
+
+        <h3>Derecho a la Intimidad Personal y Familiar</h3>
+        <p>Protege el ámbito reservado de la vida de las personas, incluyendo la intimidad corporal, personal y familiar.</p>
+        <ul>
+          <li>La intimidad cede si lo difundido afecta al ámbito público por su objetivo o valor.</li>
+          <li>Se penaliza cualquier uso de imagen o nombre que pueda afectar a la reputación de la persona.</li>
+        </ul>
+
+        <h3>Derecho a la Propia Imagen</h3>
+        <ul>
+          <li>Prohíbe captar, reproducir o publicar la imagen de una persona en lugares o momentos de su vida privada, salvo excepciones legales.</li>
+          <li>Prohíbe utilizar el nombre, voz o imagen de una persona para fines publicitarios o comerciales sin su consentimiento.</li>
+        </ul>
+
+        <h3>Vías de Protección</h3>
+        <div class="grid-2">
+          <div class="mini-card"><strong>Demanda civil</strong><p>Cuando la vulneración no constituye delito penal.</p></div>
+          <div class="mini-card"><strong>Jurisdicción penal</strong><p>Delitos de injurias y calumnias tipificados en el Código Penal.</p></div>
+          <div class="mini-card"><strong>Recurso de amparo</strong><p>Ante el Tribunal Constitucional por vulneración de derechos fundamentales.</p></div>
+          <div class="mini-card"><strong>Daños morales</strong><p>Se presumen siempre que se acredite una intromisión ilegítima, dando lugar a indemnización.</p></div>
+        </div>
+
+        <h3>Derecho de Rectificación</h3>
+        <p>Derecho a que un medio publique una corrección sobre hechos imprecisos o falsos que perjudiquen al afectado. <span class="law-ref">Debe ejercitarse en los 7 días naturales siguientes a la publicación.</span></p>
+
+        <h3>Ley Orgánica 1/1982</h3>
+        <p>De protección civil del derecho al honor, la intimidad personal y familiar y la propia imagen (de 5 de mayo). Garantizado en el artículo 18 de la Constitución, será protegido civilmente frente a todo género de intromisiones ilegítimas. Estos derechos son:</p>
+        <ul>
+          <li><strong>Irrenunciables, inalienables e imprescriptibles.</strong></li>
+          <li><strong>Autónomos:</strong> pueden vulnerarse de forma independiente.</li>
+          <li><strong>Titularidad:</strong> protegen tanto a personas físicas como, en el caso del derecho al honor, a personas jurídicas.</li>
+        </ul>
+
+      </div>
+
+      <aside class="bloque-sidebar">
+        <div class="bloque-sidebar-sticky">
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">En este bloque</p>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Art. 18 CE — Garantías</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derecho al Honor</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Intimidad Personal</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derecho a la Imagen</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Vías de Protección</a>
+            <a class="sidebar-topic-link" href="#"><span class="sidebar-topic-dot"></span>Derecho de Rectificación</a>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Referencias clave</p>
+            <p class="sidebar-law-item">Art. 18 CE</p>
+            <p class="sidebar-law-item">LO 1/1982 — Protección civil</p>
+            <p class="sidebar-law-item">Código Penal — Injurias y calumnias</p>
+            <p class="sidebar-law-item">7 días para rectificación</p>
+          </div>
+          <div class="sidebar-box">
+            <p class="sidebar-box-label">Progreso</p>
+            <div class="sidebar-progress">
+              <div class="sidebar-progress-dot done"></div><div class="sidebar-progress-dot done"></div>
+              <div class="sidebar-progress-dot active"></div>
+              <div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div><div class="sidebar-progress-dot"></div>
+            </div>
+            <p class="font-mono text-[10px] text-carbon/30 tracking-widest mt-2">Bloque 03 de 08</p>
+          </div>
+          <a href="../index.html#contacto" class="block text-center font-sans text-[12px] font-semibold text-crema bg-musgo px-4 py-3 rounded-xl hover:bg-arcilla transition-colors">Consultar sobre este tema</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <nav class="prev-next-bar py-8 px-6 md:px-16">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="bloque-2.html" class="group"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Anterior</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">← Marco Constitucional</p></a>
+      <a href="bloque-4.html" class="group text-right"><p class="font-mono text-[10px] tracking-widest uppercase text-arcilla mb-1">Siguiente</p><p class="font-serif text-musgo italic text-lg group-hover:text-arcilla transition-colors">Protección de Datos →</p></a>
+    </div>
+  </nav>
+
+  <footer class="bg-carbon text-crema pt-12 pb-8 px-6 md:px-16 rounded-t-[2rem]">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-musgo flex items-center justify-center"><span class="font-serif text-crema text-sm italic">CJ</span></div><span class="font-sans text-crema/50 text-sm">Conceptos Jurídicos</span></div>
+      <a href="../recursos.html" class="font-mono text-[11px] text-arcilla/60 hover:text-arcilla transition-colors tracking-widest uppercase">← Ver todos los bloques</a>
+      <div class="flex items-center gap-4 flex-wrap justify-end">
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Aviso Legal</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../proteccion-datos.html" class="font-mono text-arcilla/50 text-[11px] hover:text-arcilla transition-colors">Protección de Datos</a>
+        <span class="text-crema/10 text-[11px]">·</span>
+        <a href="../404.html" class="font-mono text-crema/20 text-[11px] hover:text-crema/45 transition-colors">Política de Cookies</a>
+        <div class="flex items-center gap-2 ml-1"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span><span class="font-mono text-crema/15 text-[11px]">Sistema operativo</span></div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener('scroll',()=>document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>60),{passive:true});
+    gsap.timeline({delay:0.1}).fromTo('#eye',{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power3.out'}).fromTo('#ttl',{opacity:0,y:50},{opacity:1,y:0,duration:1.1,ease:'power3.out'},'-=0.35').fromTo('#tags',{opacity:0,y:15},{opacity:1,y:0,duration:0.6,ease:'power3.out'},'-=0.5');
+    gsap.utils.toArray('.reveal').forEach(el=>gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}}));
+  </script>
+</body>
+</html>
